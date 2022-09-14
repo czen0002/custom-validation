@@ -1,5 +1,6 @@
 package io.czen.customvalidation.util;
 
+import javax.validation.Constraint;
 import javax.validation.Payload;
 import java.lang.annotation.Documented;
 import java.lang.annotation.Target;
@@ -9,6 +10,7 @@ import java.lang.annotation.ElementType;
 
 @Retention(RetentionPolicy.RUNTIME)
 @Target({ ElementType.TYPE })
+@Constraint(validatedBy = MobileNumberAndEmailAddressNotBothBlankValidator.class)
 @Documented
 public @interface MobileNumberAndEmailAddressNotBothBlank {
 
