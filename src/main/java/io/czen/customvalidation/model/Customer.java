@@ -1,12 +1,18 @@
 package io.czen.customvalidation.model;
 
 import io.czen.customvalidation.util.Club;
+import io.czen.customvalidation.util.MobileNumberAndEmailAddressNotBothBlank;
 
 import javax.validation.constraints.Email;
 import javax.validation.constraints.NotBlank;
 import javax.validation.constraints.Pattern;
 import javax.validation.constraints.Size;
 
+@MobileNumberAndEmailAddressNotBothBlank(
+        mobileCountryCode = "mobileCountryCode",
+        mobileNumber = "mobileNumber",
+        emailAddress = "emailAddress"
+)
 public class Customer {
 
     @NotBlank
