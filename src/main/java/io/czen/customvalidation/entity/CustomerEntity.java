@@ -1,6 +1,7 @@
 package io.czen.customvalidation.entity;
 
 import io.czen.customvalidation.util.Club;
+import io.czen.customvalidation.util.ClubValidation;
 import lombok.Getter;
 import lombok.Setter;
 
@@ -33,6 +34,7 @@ public class CustomerEntity {
 
     @Column(name = "CLUB")
     @Enumerated(EnumType.STRING)
+    @ClubValidation
     private Club club;
 
 }
