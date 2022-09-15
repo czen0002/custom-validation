@@ -1,6 +1,7 @@
 package io.czen.customvalidation.model;
 
 import io.czen.customvalidation.util.Club;
+import io.czen.customvalidation.util.ClubValidation;
 import io.czen.customvalidation.util.MobileNumberAndEmailAddressNotBothBlank;
 
 import javax.validation.constraints.Email;
@@ -35,5 +36,6 @@ public class Customer {
             message = "EmailAddress must be a well-formed email address")
     private String emailAddress;
 
+    @ClubValidation
     private Club club;
 }
