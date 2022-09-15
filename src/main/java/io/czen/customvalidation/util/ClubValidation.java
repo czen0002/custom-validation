@@ -1,5 +1,6 @@
 package io.czen.customvalidation.util;
 
+import javax.validation.Constraint;
 import javax.validation.Payload;
 import java.lang.annotation.Retention;
 import java.lang.annotation.RetentionPolicy;
@@ -10,6 +11,7 @@ import java.lang.annotation.Documented;
 @Retention(RetentionPolicy.RUNTIME)
 @Target({ ElementType.FIELD })
 @Documented
+@Constraint(validatedBy = ClubValidator.class)
 public @interface ClubValidation {
 
     String message() default "Invalid Club: must be RED, SLIVER and GOLD";
