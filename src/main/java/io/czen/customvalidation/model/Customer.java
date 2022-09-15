@@ -3,18 +3,25 @@ package io.czen.customvalidation.model;
 import io.czen.customvalidation.util.Club;
 import io.czen.customvalidation.util.ClubValidation;
 import io.czen.customvalidation.util.MobileNumberAndEmailAddressNotBothBlank;
+import lombok.Getter;
+import lombok.NoArgsConstructor;
+import lombok.Setter;
 
-import javax.validation.constraints.Email;
 import javax.validation.constraints.NotBlank;
-import javax.validation.constraints.Pattern;
 import javax.validation.constraints.Size;
+import javax.validation.constraints.Pattern;
+import javax.validation.constraints.Email;
+import java.io.Serializable;
 
 @MobileNumberAndEmailAddressNotBothBlank(
         mobileCountryCode = "mobileCountryCode",
         mobileNumber = "mobileNumber",
         emailAddress = "emailAddress"
 )
-public class Customer {
+@Getter
+@Setter
+@NoArgsConstructor
+public class Customer implements Serializable {
 
     @NotBlank
     private String firstName;
@@ -31,9 +38,7 @@ public class Customer {
     private String mobileNumber;
 
     @Size(max = 100, message = "EmailAddress length must not be greater than 100")
-    @Email(regexp = "^(?=.{1,64}@)[A-Za-z0-9_-]+(\\\\.[A-Za-z0-9_-]+)*" +
-            "@[^-][A-Za-z0-9-]+(\\\\.[A-Za-z0-9-]+)*(\\\\.[A-Za-z]{2,})$",
-            message = "EmailAddress must be a well-formed email address")
+    @Email(message = "EmailAddress must be a well-formed email address")
     private String emailAddress;
 
     @ClubValidation
