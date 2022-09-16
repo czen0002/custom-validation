@@ -5,7 +5,8 @@ import org.springframework.beans.BeanWrapperImpl;
 import javax.validation.ConstraintValidator;
 import javax.validation.ConstraintValidatorContext;
 
-public class MobileNumberAndEmailAddressNotBothBlankValidator implements ConstraintValidator<MobileNumberAndEmailAddressNotBothBlank, Object> {
+public class MobileNumberAndEmailAddressNotBothBlankValidator
+        implements ConstraintValidator<MobileNumberAndEmailAddressNotBothBlank, Object> {
 
     private String mobileCountryCode;
     private String mobileNumber;
