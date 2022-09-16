@@ -22,22 +22,22 @@ import java.io.Serializable;
 @NoArgsConstructor
 public class Customer implements Serializable {
 
-    @NotBlank(message = "FirstName must not be blank")
+    @NotBlank(message = "{customer.firstname.NotBlank}")
     private String firstName;
 
-    @NotBlank(message = "LastName must not be blank")
+    @NotBlank(message = "{customer.lastname.NotBlank}")
     private String lastName;
 
-    @Size(max = 5, message = "MobileCountryCode length must not be greater than 5")
+    @Size(max = 5, message = "{customer.mobileCountryCode.length}")
     @Pattern(regexp = "|\\+[0-9]+")
     private String mobileCountryCode;
 
-    @Size(max = 30, message = "MobileNumber length must not be greater than 30")
+    @Size(max = 30, message = "{customer.mobileNumber.length}")
     @Pattern(regexp = "|[0-9]+")
     private String mobileNumber;
 
-    @Size(max = 100, message = "EmailAddress length must not be greater than 100")
-    @Email(message = "EmailAddress must be a well-formed email address")
+    @Size(max = 100, message = "{customer.emailAddress.length}")
+    @Email(message = "{customer.emailAddress.format}")
     private String emailAddress;
 
     @ClubValidation
