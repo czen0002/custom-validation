@@ -22,10 +22,10 @@ import java.io.Serializable;
 @NoArgsConstructor
 public class Customer implements Serializable {
 
-    @NotBlank
+    @NotBlank(message = "FirstName must not be blank")
     private String firstName;
 
-    @NotBlank
+    @NotBlank(message = "LastName must not be blank")
     private String lastName;
 
     @Size(max = 5, message = "MobileCountryCode length must not be greater than 5")
