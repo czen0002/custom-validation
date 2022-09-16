@@ -1,6 +1,5 @@
 package io.czen.customvalidation.model;
 
-import io.czen.customvalidation.util.Club;
 import io.czen.customvalidation.annotation.ClubValidation;
 import io.czen.customvalidation.annotation.MobileNumberAndEmailAddressNotBothBlank;
 import lombok.Getter;
@@ -42,5 +41,5 @@ public class Customer implements Serializable {
     private String emailAddress;
 
     @ClubValidation
-    private Club club;
+    private String club;
 }
