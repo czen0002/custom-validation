@@ -1,8 +1,8 @@
 package io.czen.customvalidation.model;
 
 import io.czen.customvalidation.util.Club;
-import io.czen.customvalidation.util.ClubValidation;
-import io.czen.customvalidation.util.MobileNumberAndEmailAddressNotBothBlank;
+import io.czen.customvalidation.annotation.ClubValidation;
+import io.czen.customvalidation.annotation.MobileNumberAndEmailAddressNotBothBlank;
 import lombok.Getter;
 import lombok.NoArgsConstructor;
 import lombok.Setter;

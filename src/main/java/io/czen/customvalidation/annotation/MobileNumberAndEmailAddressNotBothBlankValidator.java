@@ -1,4 +1,4 @@
-package io.czen.customvalidation.util;
+package io.czen.customvalidation.annotation;
 
 import org.springframework.beans.BeanWrapperImpl;
 

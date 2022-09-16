@@ -1,4 +1,6 @@
-package io.czen.customvalidation.util;
+package io.czen.customvalidation.annotation;
+
+import io.czen.customvalidation.util.Club;
 
 import javax.validation.ConstraintValidator;
 import javax.validation.ConstraintValidatorContext;

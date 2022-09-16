@@ -1,4 +1,4 @@
-package io.czen.customvalidation.util;
+package io.czen.customvalidation.annotation;
 
 import javax.validation.Constraint;
 import javax.validation.Payload;
