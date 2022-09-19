@@ -1,6 +1,6 @@
 package io.czen.customvalidation.model.Error;
 
-import org.springframework.validation.FieldError;
+import org.springframework.validation.ObjectError;
 import org.springframework.web.bind.MethodArgumentNotValidException;
 
 import static java.lang.String.valueOf;
@@ -22,13 +22,13 @@ public class ErrorBuilder {
 
     public static Errors buildMethodArgumentNotValidErrors(MethodArgumentNotValidException e) {
         return new Errors().errorList(e.getBindingResult()
-                .getFieldErrors()
+                .getAllErrors()
                 .stream()
-                .map(ErrorBuilder::fromFieldError)
+                .map(ErrorBuilder::fromObjectError)
                 .toList());
     }
 
-    private static Error fromFieldError(FieldError fieldError) {
-        return buildBadRequestError(fieldError.getDefaultMessage());
+    private static Error fromObjectError(ObjectError objectError) {
+        return buildBadRequestError(objectError.getDefaultMessage());
     }
 }
